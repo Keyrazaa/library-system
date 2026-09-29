@@ -7,7 +7,7 @@
     <ul>
         @foreach($books as $book)
             <li>
-                {{ $book['title'] }} — {{ $book['author'] }} ({{ $book['year'] }})
+                {{ $book->title }} — {{ $book->author }} ({{ $book->year }}) — Stok: {{ $book->stock }}
             </li>
         @endforeach
     </ul>
