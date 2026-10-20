@@ -12,14 +12,16 @@
             <a href="/dashboard">Dashboard</a> |
             <a href="/books">Books</a> |
             <a href="/categories">Categories</a> |
-            <a href="/members">Members</a> |
-             
-        
+            <a href="/members">Members</a>
         </nav>
         <hr>
     </header>
 
     <main>
+        @if(session('success'))
+            <p>{{ session('success') }}</p>
+        @endif
+
         @yield('content')
     </main>
 
