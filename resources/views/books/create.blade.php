@@ -25,7 +25,7 @@
         <input
             type="text"
             name="author"
-            value="{{ old('title') }}"
+            value="{{ old('author') }}"
         >
         @error('author')
             <p>{{ $message }}</p>
@@ -33,11 +33,27 @@
     </div>
 
     <div>
+    <label for="category_id">Kategori</label>
+    <select name="category_id" id="category_id">
+        <option value="">Pilih kategori</option>
+        @foreach ($categories as $category)
+            <option value="{{ $category->id }}"
+                @selected(old('category_id') == $category->id)>
+                {{ $category->name }}
+            </option>
+        @endforeach
+    </select>
+    @error('category_id')
+        <p>{{ $message }}</p>
+    @enderror
+    </div>
+
+    <div>
         <label>Tahun Terbit</label>
         <input
             type="number"
             name="year"
-            value="{{ old('title') }}"
+            value="{{ old('year') }}"
         >
         @error('year')
             <p>{{ $message }}</p>
@@ -49,7 +65,7 @@
         <input
             type="number"
             name="stock"
-            value="{{ old('title') }}"
+            value="{{ old('stock') }}"
         >
         @error('stock')
             <p>{{ $message }}</p>

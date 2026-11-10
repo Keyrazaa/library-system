@@ -3,6 +3,7 @@
 @section('title', 'Daftar Buku')
 
 @section('content')
+    
     <h1>{{ $title }}</h1>
 
     <a href="{{ route('books.create') }}">Tambah Buku</a>
@@ -11,6 +12,7 @@
     @foreach($books as $book)
         <h3>{{ $book->title }}</h3>
         <p>Penulis: {{ $book->author }}</p>
+        <p>Kategori: {{ $book->category?->name ?? 'Belum ada kategori' }}</p>
         <p>Tahun: {{ $book->year }}</p>
         <p>Stok: {{ $book->stock }}</p>
 
